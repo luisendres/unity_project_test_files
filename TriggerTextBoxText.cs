@@ -27,13 +27,31 @@ public class TriggerTextBoxText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if(plant.grow == plant.maxGrowth)
+        // {
+        //     textDisplay.text = "MaxGrowth!";
+        // }
         if(plant.isThirsty())
         {
-            textDisplay.text = "Plant needs watering";
+            if(plant.grow == plant.maxGrowth)
+            {
+                textDisplay.text = "Plant needs watering. MaxGrowth!";
+            }
+            else
+            {
+                textDisplay.text = "Plant needs watering";
+            }
         }
         else
         {
-            textDisplay.text = "Plant is happy!";
+            if(plant.grow == plant.maxGrowth)
+            {
+                textDisplay.text = "Plant is happy! MaxGrowth!";
+            }
+            else
+            {
+                textDisplay.text = "Plant is happy!";
+            }
         }
     }
 }
